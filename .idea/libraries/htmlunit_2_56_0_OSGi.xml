@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="htmlunit-2.56.0-OSGi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../htmlunit-2.56.0-OSGi.jar!/" />
+      <root url="file://$PROJECT_DIR$/../htmlunit-2.56.0" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$PROJECT_DIR$/../htmlunit-2.56.0/apidocs" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../htmlunit-2.56.0/src/main/java" />
+      <root url="file://$PROJECT_DIR$/../htmlunit-2.56.0/src/test/java" />
+      <root url="file://$PROJECT_DIR$/../htmlunit-2.56.0/src/test/resources/libraries/dojo/1.9.3/util/doh/robot" />
+    </SOURCES>
+  </library>
+</component>
