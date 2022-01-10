@@ -7,6 +7,8 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ParsBookm {
 
@@ -21,21 +23,21 @@ public class ParsBookm {
         webClient.getOptions().setCssEnabled(false);
         webClient.getOptions().setThrowExceptionOnScriptError(false);
         webClient.getOptions().setThrowExceptionOnFailingStatusCode(false);
-        webClient.getOptions().setTimeout(3000);
+        webClient.getOptions().setTimeout(5000);
         HtmlPage htmlPage = webClient.getPage(url);
-        webClient.waitForBackgroundJavaScript(5000);
+        webClient.waitForBackgroundJavaScript(10000);
 
         String pageAsXml = htmlPage.asXml();
 
         // Jsoup parsing
-        Document doc = Jsoup.parse(pageAsXml);
-        Element divElement = doc.getElementById("div");
-        System.out.println(divElement);
-//        for (Element divEl: divElement) {
-//            System.out.println(divEl);
-//
-//        }
-
-
+        Document page = Jsoup.parse(pageAsXml);
+        Elements divElement = page.select("div[class=content]");
+//        System.out.println(divElement.text());
+        for (Element divEl : divElement) {
+            String[] elPoints = divEl.text().split("\\.");
+            for (String elPoint : elPoints) {
+                System.out.println(elPoint);
+            }
+        }
     }
 }
