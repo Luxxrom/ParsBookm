@@ -136,7 +136,7 @@ public class ParsBookm {
 //            }
     }
 
-    static Elements listDiv(Element node) {
+    private static Elements listDiv(Element node) {
 
         Attributes attributeEl = node.attributes();
         for (Attribute attEl : attributeEl) {
